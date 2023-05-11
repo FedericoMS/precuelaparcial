@@ -1,0 +1,49 @@
+<H6>BÚSQUEDA COMPONENT</H6>
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container" [ngSwitch]="visualizacion">
+        <app-tabla-pelicula *ngSwitchCase="'Tabla'" [listadoRecibido]="listaDePelis" (PasamosUnaPelicula)="ObtenerPeliculaSeleccionada($event)"></app-tabla-pelicula>
+        <app-pelicula-listado *ngSwitchCase="'Listado'" [listadoRecibido]="listaDePelis" (PasamosUnaPelicula)="ObtenerPeliculaSeleccionada($event)"></app-pelicula-listado>
+        <!-- [target, @input() de hijo]="source, atributo de padre" (source, @output() event del hijo)="target, manejador de padre" -->   
+             <p><a class="btn btn-secondary" href="#" role="button" (click)="CambiarVista()">Cambiar vista</a></p>
+      </div>
+    </div>
+  
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Para borrar</h2>
+          <p>Aquí van los controles necesarios, según la entidad y funcionalidad requerida </p>
+          <p><a class="btn btn-secondary" href="#" role="button">Borrar &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+        <app-detalle-pelicula [unaPelicula]="peliculaActual"></app-detalle-pelicula>
+        </div>
+        <div class="col-md-4">
+          <h2>Modificar</h2>
+          <p>Aquí van los controles necesarios, según la entidad y funcionalidad requerida</p>
+          <p><a class="btn btn-secondary" href="#" role="button">Modificar &raquo;</a></p>
+        </div>
+      </div>
+  
+      <hr>
+  
+    </div> <!-- /container -->
+  
+  </main>
+  
+  <footer class="container">
+    <p>&copy; Soria Federico 2023</p>
+  </footer>
+  
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../../../dist/js/bootstrap.min.js"></script>

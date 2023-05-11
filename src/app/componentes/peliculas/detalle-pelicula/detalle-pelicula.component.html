@@ -1,0 +1,19 @@
+<div *ngIf="unaPelicula?.nombre != null" >
+    <img
+      style="
+        width: 100px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      "
+      src="{{ unaPelicula?.fotoPelicula }}"
+      alt=""
+    />
+    <p>Titulo: {{ unaPelicula?.nombre }}</p>
+    <p>Genero: {{ unaPelicula?.tipo }}</p>
+    <p>Estreno: {{ unaPelicula?.fechaDeEstreno }}</p>
+    <p>Espectadores: {{ unaPelicula?.cantidadPublico }}</p>
+    <p><a class="btn btn-secondary" href="#" role="button" (click)="limpiar()">Limpiar</a></p>
+</div>

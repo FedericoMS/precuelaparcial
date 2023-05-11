@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "precuelaparcialsoria": {
+      "hosting": {
+        "precuelaparcial": [
+          "precuelaparcialsoria"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "precuelaparcialsoria"
+  }
+}
